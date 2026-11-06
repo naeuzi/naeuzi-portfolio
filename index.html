@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>NAEUZI — Video Editor</title>
+  <meta name="description" content="NAEUZI — video editor since 2015, owner of NAEUZI Studios AB (Sweden), After Effects and Premiere Pro since 2019. 1.2M on TikTok, 430K+ on Instagram, 1B+ views.">
+  <meta name="theme-color" content="#0c0516">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NAEUZI">
+  <meta property="og:title" content="NAEUZI — Video editor">
+  <meta property="og:description" content="Editing since 2015. 1.2M on TikTok · 430K+ on Instagram · 1B+ views.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function (d) {
+      d.className = d.className.replace('no-js', 'js');
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduce-motion');
+    })(document.documentElement);
+  </script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <!-- Icon sprite (brand icons: Simple Icons, CC0) -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 6.6 5.4 11.1 12 12-6.6.9-11.1 5.4-12 12-.9-6.6-5.4-11.1-12-12C6.6 11.1 11.1 6.6 12 0z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4.5v15M6 13.5l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.4"/><path d="M3.8 7l8.2 6 8.2-6" stroke-linecap="round"/></g></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="8.5" y="8.5" width="12" height="12" rx="2.2"/><path d="M15.5 8.5V5.7a2.2 2.2 0 0 0-2.2-2.2H5.7a2.2 2.2 0 0 0-2.2 2.2v7.6a2.2 2.2 0 0 0 2.2 2.2h2.8"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.2v13.6c0 .8.9 1.3 1.6.8l10.2-6.8a1 1 0 0 0 0-1.6L9.6 4.4C8.9 3.9 8 4.4 8 5.2z"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></g></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></g></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></g></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></g></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Atmosphere -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Nav -->
+  <header class="nav" data-nav>
+    <a class="brand" href="#top" aria-label="NAEUZI — back to top">
+      <span class="brand__name">NAEUZI</span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#work">Edits</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--ghost btn--sm" href="https://naeuzistudios.com" target="_blank" rel="noopener"><span><span class="hide-sm">NAEUZI </span>Studios</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--ghost btn--sm" href="https://payhip.com/naeuzi" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>Store</a>
+      <button class="btn btn--primary btn--sm" type="button" data-promo-open>
+        <svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span class="hide-sm">Promote your track</span><span class="show-sm">Promo</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="sparks" aria-hidden="true">
+        <svg style="--x:8%;--y:22%;--s:18px;--d:0s"><use href="#i-spark"/></svg>
+        <svg style="--x:17%;--y:70%;--s:12px;--d:1.2s"><use href="#i-spark"/></svg>
+        <svg style="--x:44%;--y:12%;--s:10px;--d:.6s"><use href="#i-spark"/></svg>
+        <svg style="--x:53%;--y:84%;--s:16px;--d:2s"><use href="#i-spark"/></svg>
+        <svg style="--x:91%;--y:18%;--s:14px;--d:1.6s"><use href="#i-spark"/></svg>
+        <svg style="--x:96%;--y:62%;--s:9px;--d:.3s"><use href="#i-spark"/></svg>
+        <svg style="--x:70%;--y:6%;--s:8px;--d:2.4s"><use href="#i-spark"/></svg>
+      </div>
+
+      <div class="hero__text">
+        <img class="hero__avatar" src="assets/img/pfp.jpg" width="428" height="531" alt="NAEUZI profile picture" data-reveal>
+        <h1 class="hero__title">
+          <span class="line" data-reveal><span class="hl">NAEUZI</span></span>
+        </h1>
+        <p class="hero__lead" data-reveal>Editor since <strong>2015</strong> and owner of <strong>NAEUZI Studios AB</strong>, based in Sweden. Working in <strong>After Effects</strong> and <strong>Premiere Pro</strong> since 2019.</p>
+        <div class="hero__actions" data-reveal>
+          <a class="btn btn--primary" href="#work">Watch my edits <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+          <a class="btn btn--ghost" href="https://www.tiktok.com/@naeuzi" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg>@NAEUZI</a>
+        </div>
+      </div>
+
+      <!-- Featured edit: put a showreel here later (see README) -->
+      <figure class="hero__phone" data-reveal>
+        <div class="phone">
+          <div class="phone__screen edit__media" data-src="assets/edits/showreel.mp4" data-poster="assets/edits/showreel.jpg">
+            <div class="placeholder">
+              <svg class="placeholder__icon" aria-hidden="true"><use href="#i-play"/></svg>
+              <span class="placeholder__label">Showreel</span>
+              <span class="placeholder__sub">dropping soon</span>
+            </div>
+          </div>
+          <div class="phone__ui" aria-hidden="true">
+            <span class="phone__handle">@NAEUZI</span>
+            <span class="phone__sound"><svg class="icon"><use href="#i-music"/></svg> original edit</span>
+          </div>
+        </div>
+        <figcaption class="float-tag float-tag--a">1.5M followers</figcaption>
+        <figcaption class="float-tag float-tag--b"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg> 1B+ views</figcaption>
+      </figure>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats" aria-label="Numbers">
+      <div class="stat" data-reveal>
+        <span class="stat__num" data-count="1.2" data-decimals="1" data-suffix="M">1.2M</span>
+        <span class="stat__label"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg> TikTok followers</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num" data-count="430" data-suffix="K+">430K+</span>
+        <span class="stat__label"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg> Instagram followers</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num" data-count="1" data-suffix="B+">1B+</span>
+        <span class="stat__label">Total views</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num" data-count="10" data-suffix="+" data-years-since="2015">10+</span>
+        <span class="stat__label">Years editing</span>
+      </div>
+    </section>
+
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal><span>01</span> Edits</p>
+        <h2 class="section__title" data-reveal>Some of my favourites</h2>
+      </header>
+
+      <div class="filters" role="group" aria-label="Filter edits" data-reveal>
+        <button type="button" aria-pressed="true" data-filter="all">All</button>
+        <button type="button" aria-pressed="false" data-filter="viral">Viral</button>
+        <button type="button" aria-pressed="false" data-filter="release">Releases</button>
+        <button type="button" aria-pressed="false" data-filter="phonk">Phonk</button>
+        <button type="button" aria-pressed="false" data-filter="3d">3D</button>
+        <button type="button" aria-pressed="false" data-filter="anime">Anime</button>
+      </div>
+
+      <!--
+        EDIT SLOTS — see README "Adding your edits".
+        Fill data-src with a video file (e.g. assets/edits/anime-01.mp4) and/or
+        data-link with the TikTok / Instagram post. Empty slots show "coming soon".
+      -->
+      <div class="edits">
+        <article class="edit" data-cat="viral" data-reveal>
+          <div class="edit__media" data-src="assets/edits/viral-01.mp4" data-poster="assets/edits/viral-01.jpg" data-views="24.7M" data-link="https://www.tiktok.com/@naeuzi/video/7648976944112995606"></div>
+          <footer class="edit__meta"><span class="edit__tag">Viral</span></footer>
+        </article>
+        <article class="edit" data-cat="viral" data-reveal>
+          <div class="edit__media" data-src="assets/edits/viral-02.mp4" data-poster="assets/edits/viral-02.jpg" data-views="17.5M" data-link="https://www.tiktok.com/@naeuzi/video/7472521870210780438"></div>
+          <footer class="edit__meta"><span class="edit__tag">Viral</span></footer>
+        </article>
+        <article class="edit" data-cat="viral" data-reveal>
+          <div class="edit__media" data-src="assets/edits/viral-03.mp4" data-poster="assets/edits/viral-03.jpg" data-views="22M" data-link="https://www.tiktok.com/@naeuzi/video/7454333151347887382"></div>
+          <footer class="edit__meta"><span class="edit__tag">Viral</span></footer>
+        </article>
+        <article class="edit" data-cat="viral" data-reveal>
+          <div class="edit__media" data-src="assets/edits/viral-04.mp4" data-poster="assets/edits/viral-04.jpg" data-views="10M" data-link="https://www.tiktok.com/@naeuzi/video/7694306692527361302"></div>
+          <footer class="edit__meta"><span class="edit__tag">Viral</span></footer>
+        </article>
+        <article class="edit" data-cat="release" data-reveal>
+          <div class="edit__media" data-src="assets/edits/release-01.mp4" data-poster="assets/edits/release-01.jpg" data-link="https://www.tiktok.com/@naeuzi/video/7559190775293054230"></div>
+          <footer class="edit__meta"><span class="edit__tag">JISOO × ZAYN · Release</span></footer>
+        </article>
+        <article class="edit" data-cat="release" data-reveal>
+          <div class="edit__media" data-src="assets/edits/release-02.mp4" data-poster="assets/edits/release-02.jpg" data-link="https://www.tiktok.com/@naeuzi/video/7626412530797219094"></div>
+          <footer class="edit__meta"><span class="edit__tag">LISA × ANYMA · Release</span></footer>
+        </article>
+        <article class="edit" data-cat="release" data-reveal>
+          <div class="edit__media" data-src="assets/edits/release-03.mp4" data-poster="assets/edits/release-03.jpg" data-link="https://www.tiktok.com/@naeuzi/video/7686655894150532374"></div>
+          <footer class="edit__meta"><span class="edit__tag">ROSÉ · New Trick · Release</span></footer>
+        </article>
+        <article class="edit" data-cat="phonk" data-reveal>
+          <div class="edit__media" data-src="assets/edits/phonk-01.mp4" data-poster="assets/edits/phonk-01.jpg" data-fit="contain" data-link="https://www.tiktok.com/@naeuzi/video/7642870063099383062"></div>
+          <footer class="edit__meta"><span class="edit__tag">Phonk</span></footer>
+        </article>
+        <article class="edit" data-cat="3d" data-reveal>
+          <div class="edit__media" data-src="assets/edits/3d-01.mp4" data-poster="assets/edits/3d-01.jpg" data-fit="contain" data-link=""></div>
+          <footer class="edit__meta"><span class="edit__tag">3D</span></footer>
+        </article>
+        <article class="edit" data-cat="anime" data-reveal>
+          <div class="edit__media" data-src="assets/edits/anime-01.mp4" data-poster="assets/edits/anime-01.jpg" data-fit="contain" data-link=""></div>
+          <footer class="edit__meta"><span class="edit__tag">Anime</span></footer>
+        </article>
+        <article class="edit" data-cat="anime" data-reveal>
+          <div class="edit__media" data-src="assets/edits/anime-02.mp4" data-poster="assets/edits/anime-02.jpg" data-fit="contain" data-link=""></div>
+          <footer class="edit__meta"><span class="edit__tag">Anime</span></footer>
+        </article>
+        <article class="edit" data-cat="anime" data-reveal>
+          <div class="edit__media" data-src="assets/edits/anime-03.mp4" data-poster="assets/edits/anime-03.jpg" data-fit="contain" data-link=""></div>
+          <footer class="edit__meta"><span class="edit__tag">Anime</span></footer>
+        </article>
+        <article class="edit" data-cat="anime" data-reveal>
+          <div class="edit__media" data-src="assets/edits/anime-04.mp4" data-poster="assets/edits/anime-04.jpg" data-fit="contain" data-link=""></div>
+          <footer class="edit__meta"><span class="edit__tag">Anime</span></footer>
+        </article>
+      </div>
+
+      <div class="see-more" data-reveal>
+        <a class="btn btn--ghost" href="https://www.tiktok.com/@naeuzi" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg>See more on TikTok<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="about__text">
+        <p class="eyebrow" data-reveal><span>02</span> About</p>
+        <div class="about__head" data-reveal>
+          <a class="about__photo" href="https://www.instagram.com/alvamonn" target="_blank" rel="noopener" aria-label="Alva on Instagram (@alvamonn)">
+            <img class="is-on" src="assets/img/alva-2.jpg" width="360" height="360" alt="Alva">
+            <img src="assets/img/alva-3.jpg" width="360" height="360" alt="" aria-hidden="true">
+            <img src="assets/img/alva-4.jpg" width="360" height="360" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/alva-5.jpg" width="360" height="360" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/alva-6.jpg" width="360" height="360" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/alva-7.jpg" width="360" height="360" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/alva-8.jpg" width="360" height="360" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/alva-9.jpg" width="360" height="360" alt="" aria-hidden="true" loading="lazy">
+          </a>
+          <h2 class="section__title">Meet Alva.</h2>
+        </div>
+        <p class="about__roles" data-reveal>Business owner <span>·</span> Account manager <span>·</span> Video editor <span>·</span> Marketing</p>
+        <p class="about__intro" data-reveal>I'm Alva — a 19-year-old video editor from Sweden, known online as NAEUZI.</p>
+        <p class="section__lead" data-reveal>My interest in editing started in 2015. In 2019 I moved over to Adobe After Effects and Premiere Pro and spent the next few years finding my niche — experimenting with anime edits, pop edits and more than a few different usernames along the way.</p>
+        <p class="section__lead" data-reveal>In 2023 NAEUZI was born. The account grew fast on Instagram, and in 2024 I brought it to TikTok, where it has since reached 1.2M followers and more than a billion views across platforms.</p>
+        <p class="section__lead" data-reveal>In 2025, at 18, I founded <a class="link" href="https://naeuzistudios.com" target="_blank" rel="noopener">NAEUZI Studios AB</a> — a Swedish company focused on digital marketing, account management and editing services.</p>
+        <p class="section__lead" data-reveal>What started as being a fan has turned into working on releases from the BLACKPINK members themselves.</p>
+      </div>
+      <ol class="timeline" aria-label="Timeline">
+        <li data-reveal><span class="timeline__year">2015</span><span class="timeline__text"><strong>First edits</strong>Getting into editing on Video Star.</span></li>
+        <li data-reveal><span class="timeline__year">2019</span><span class="timeline__text"><strong>Switching to Adobe</strong>After Effects and Premiere Pro. Anime edits, pop edits and new usernames while finding a niche.</span></li>
+        <li data-reveal><span class="timeline__year">2023</span><span class="timeline__text"><strong>NAEUZI is born</strong>Fast growth on Instagram.</span></li>
+        <li data-reveal><span class="timeline__year">2024</span><span class="timeline__text"><strong>On to TikTok</strong>Now 1.2M followers.</span></li>
+        <li data-reveal><span class="timeline__year">2025</span><span class="timeline__text"><strong>NAEUZI Studios AB</strong>Founded at 18 — digital marketing, account management and editing.</span></li>
+        <li data-reveal><span class="timeline__year">Now</span><span class="timeline__text"><strong>Business owner</strong>Still a video editor — now also account manager and marketing at NAEUZI Studios.</span></li>
+      </ol>
+
+      <div class="about__cards">
+        <div class="about__card" data-reveal>
+          <p class="about__label">Releases I've worked on</p>
+          <ul class="chips">
+            <li>NEW TRICK</li><li>BAD ANGEL</li><li>SAWADIKA</li><li>TARANTINO</li><li>EARTHQUAKE</li><li>ADDICTED</li><li class="chips__more">and more</li>
+          </ul>
+        </div>
+        <div class="about__card" data-reveal>
+          <p class="about__label">Featured in</p>
+          <ul class="press">
+            <li><a href="https://vogue.co.th/article/naeuzi" target="_blank" rel="noopener"><strong>Vogue Thailand</strong><span>Read the feature</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+            <li><div><strong>SVT</strong><span>Swedish national television</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promote your track -->
+    <section class="section promo" id="promo">
+      <div class="promo__card">
+        <div class="sparks" aria-hidden="true">
+          <svg style="--x:6%;--y:14%;--s:14px;--d:.4s"><use href="#i-spark"/></svg>
+          <svg style="--x:94%;--y:20%;--s:18px;--d:1.4s"><use href="#i-spark"/></svg>
+          <svg style="--x:88%;--y:86%;--s:10px;--d:2.2s"><use href="#i-spark"/></svg>
+        </div>
+        <header class="section__head section__head--center">
+          <p class="eyebrow" data-reveal><span>03</span> For labels &amp; artists</p>
+          <h2 class="section__title" data-reveal>Promote <span class="hl">your</span> track</h2>
+        </header>
+
+        <div class="reach" data-reveal>
+          <a class="reach__opt reach__opt--main" href="mailto:marketing@naeuzi.com?subject=Track%20promotion&amp;body=Hi%20naeuzi!%0A%0AArtist%20%2F%20label%3A%20%0ATrack%20link%3A%20%0ARelease%20date%3A%20%0APlatforms%20(TikTok%20%2F%20Instagram)%3A%20%0ABudget%3A%20%0A%0AThanks!">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+            <span><strong>Email me</strong><small>marketing@naeuzi.com</small></span>
+            <svg class="icon reach__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="reach__opt" href="https://www.tiktok.com/@naeuzi" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg>
+            <span><strong>DM on TikTok</strong><small>@NAEUZI</small></span>
+            <svg class="icon reach__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="reach__opt" href="https://ig.me/m/naeuzi" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+            <span><strong>DM on Instagram</strong><small>@NAEUZI</small></span>
+            <svg class="icon reach__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <h2 class="contact__title" data-reveal>Contact</h2>
+      <div class="contact__mails" data-reveal>
+        <div class="contact__mail">
+          <span class="contact__kind">General</span>
+          <a class="contact__addr" href="mailto:contact@naeuzi.com">contact@naeuzi.com</a>
+          <button class="btn btn--ghost btn--sm" type="button" data-copy="contact@naeuzi.com"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
+        </div>
+        <div class="contact__mail">
+          <span class="contact__kind">Marketing, music promotion &amp; inquiries</span>
+          <a class="contact__addr" href="mailto:marketing@naeuzi.com">marketing@naeuzi.com</a>
+          <button class="btn btn--ghost btn--sm" type="button" data-copy="marketing@naeuzi.com"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
+        </div>
+      </div>
+      <ul class="socials" data-reveal>
+        <li><a href="https://www.tiktok.com/@naeuzi" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg><span><strong>@NAEUZI</strong><small>TikTok · 1.2M</small></span></a></li>
+        <li><a href="https://www.instagram.com/naeuzi" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span><strong>@NAEUZI</strong><small>Instagram · 430K+</small></span></a></li>
+        <li><a href="https://www.instagram.com/alvamonn" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span><strong>@alvamonn</strong><small>Personal</small></span></a></li>
+        <li><a href="https://payhip.com/naeuzi" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span><strong>Store</strong><small>payhip.com/naeuzi</small></span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span data-year>2026</span> NAEUZI</span>
+    <a href="https://naeuzistudios.com" target="_blank" rel="noopener">A NAEUZI Studios creator <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </footer>
+
+  <!-- Promote your track: choose how to reach out -->
+  <dialog class="modal" id="promo-modal" aria-labelledby="promo-modal-title">
+    <form method="dialog" class="modal__close-form"><button class="icon-btn" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></form>
+    <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg> For labels &amp; artists</p>
+    <h2 class="modal__title" id="promo-modal-title">Promote your track</h2>
+    <p class="modal__lead">Pick how you'd like to reach me. Include the track link, release date and your budget.</p>
+    <div class="reach reach--stack">
+      <a class="reach__opt reach__opt--main" href="mailto:marketing@naeuzi.com?subject=Track%20promotion&amp;body=Hi%20naeuzi!%0A%0AArtist%20%2F%20label%3A%20%0ATrack%20link%3A%20%0ARelease%20date%3A%20%0APlatforms%20(TikTok%20%2F%20Instagram)%3A%20%0ABudget%3A%20%0A%0AThanks!">
+        <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+        <span><strong>Email</strong><small>marketing@naeuzi.com</small></span>
+        <svg class="icon reach__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="reach__opt" href="https://www.tiktok.com/@naeuzi" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg>
+        <span><strong>TikTok DM</strong><small>@NAEUZI</small></span>
+        <svg class="icon reach__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="reach__opt" href="https://ig.me/m/naeuzi" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+        <span><strong>Instagram DM</strong><small>@NAEUZI</small></span>
+        <svg class="icon reach__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
