@@ -25,7 +25,7 @@ Every edit slot in `index.html` looks like this:
 | `data-cat` | `viral`, `release`, `phonk`, `3d` or `anime` — drives the filter buttons. |
 
 Empty slots show a "dropping soon" placeholder. Copy an `<article>` to add more slots, delete one to remove it.
-The phone in the hero (`hero__phone`) takes the same `data-src` / `data-poster` for a showreel.
+The phone in the hero plays a film-style opening (title card, then the showreel set in `data-reel` on `.phone`), then shows a feed of every edit with a video file. Tapping one plays it in the phone. The feed builds itself from the Edits section, so new edits appear there automatically.
 
 **Keep videos small:** vertical 9:16, 720×1280, H.264 MP4, ideally under 8 MB each (GitHub rejects files over 100 MB).
 

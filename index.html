@@ -29,6 +29,7 @@
   </script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/stars.js" defer></script>
+  <script src="assets/js/phone.js" defer></script>
 </head>
 <body>
   <!-- Icon sprite (brand icons: Simple Icons, CC0) -->
@@ -91,17 +92,68 @@
 
       <!-- Featured edit: put a showreel here later (see README) -->
       <figure class="hero__phone" data-reveal>
-        <div class="phone">
-          <div class="phone__screen edit__media" data-src="assets/edits/showreel.mp4" data-poster="assets/edits/showreel.jpg">
-            <div class="placeholder">
-              <svg class="placeholder__icon" aria-hidden="true"><use href="#i-play"/></svg>
-              <span class="placeholder__label">Showreel</span>
-              <span class="placeholder__sub">dropping soon</span>
+        <!-- The phone: a film-style opening, then a feed of edits to tap through (see assets/js/phone.js) -->
+        <div class="phone" data-phone data-reel="assets/edits/showreel.mp4" data-reel-poster="assets/edits/showreel.jpg">
+          <span class="phone__key phone__key--action" aria-hidden="true"></span>
+          <span class="phone__key phone__key--up" aria-hidden="true"></span>
+          <span class="phone__key phone__key--down" aria-hidden="true"></span>
+          <span class="phone__key phone__key--power" aria-hidden="true"></span>
+          <div class="phone__screen">
+            <div class="ph-status" aria-hidden="true">
+              <span class="ph-status__time" data-clock>9:41</span>
+              <span class="ph-island"></span>
+              <span class="ph-status__sys">
+                <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".45"/><rect x="2.2" y="2.2" width="17" height="7.6" rx="1.8"/><rect x="24.6" y="4" width="1.8" height="4" rx=".9" opacity=".45"/></svg>
+              </span>
             </div>
-          </div>
-          <div class="phone__ui" aria-hidden="true">
-            <span class="phone__handle">@NAEUZI</span>
-            <span class="phone__sound"><svg class="icon"><use href="#i-music"/></svg> original edit</span>
+
+            <!-- 1. The opening -->
+            <div class="ph-intro">
+              <video class="ph-intro__video" muted loop playsinline preload="auto" aria-hidden="true"></video>
+              <div class="ph-intro__bar ph-intro__bar--top"></div>
+              <div class="ph-intro__bar ph-intro__bar--bottom"></div>
+              <div class="ph-intro__title" aria-hidden="true">
+                <small>a film by</small>
+                <strong>NAEUZI</strong>
+                <small>edits since 2015</small>
+              </div>
+              <button class="ph-skip" type="button" data-ph-feed>Skip <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              <button class="ph-browse" type="button" data-ph-feed><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Browse my edits</button>
+            </div>
+
+            <!-- 2. The feed -->
+            <div class="ph-feed" aria-label="Edits">
+              <header class="ph-profile">
+                <img class="ph-profile__pic" src="assets/img/pfp.jpg" alt="" width="64" height="64">
+                <strong class="ph-profile__name">@NAEUZI</strong>
+                <ul class="ph-profile__stats">
+                  <li><b>1.5M</b><span>Followers</span></li>
+                  <li><b>1B+</b><span>Views</span></li>
+                  <li><b data-ph-count>0</b><span>Edits</span></li>
+                </ul>
+                <button class="ph-replay" type="button" data-ph-intro><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Replay intro</button>
+              </header>
+              <div class="ph-grid" data-ph-grid></div>
+            </div>
+
+            <!-- 3. The player -->
+            <div class="ph-player" aria-hidden="true">
+              <div class="ph-player__bg"></div>
+              <video class="ph-player__video" playsinline loop></video>
+              <div class="ph-player__top">
+                <button class="ph-icon" type="button" data-ph-back aria-label="Back to edits"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <span class="ph-player__tag" data-ph-tag></span>
+                <button class="ph-icon" type="button" data-ph-sound aria-label="Mute"><svg class="icon" aria-hidden="true"><use href="#i-sound"/></svg></button>
+              </div>
+              <div class="ph-player__bottom">
+                <span class="ph-player__views" data-ph-views></span>
+                <a class="ph-player__link" data-ph-link href="#" target="_blank" rel="noopener">Watch on TikTok <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+              <div class="ph-progress"><span data-ph-progress></span></div>
+            </div>
+
+            <span class="ph-home" aria-hidden="true"></span>
           </div>
         </div>
         <figcaption class="float-tag float-tag--a">1.5M followers</figcaption>
