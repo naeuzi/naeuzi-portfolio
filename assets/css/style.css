@@ -166,7 +166,8 @@ body::before { /* static background glow */
 /* ---------- Hero ---------- */
 .hero {
   position: relative; max-width: var(--max); margin: 0 auto;
-  padding: 108px var(--pad) 36px;
+  min-height: calc(100svh - 130px);
+  padding: 124px var(--pad) 48px;
   display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: clamp(32px, 5vw, 80px);
 }
 .hero__text { position: relative; z-index: 1; }
@@ -180,7 +181,7 @@ body::before { /* static background glow */
 .hero__lead strong { color: var(--tx); font-weight: 700; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-.hero__phone { position: relative; margin: 0; justify-self: center; width: min(290px, 100%); }
+.hero__phone { position: relative; margin: 0; justify-self: center; width: min(320px, 100%); }
 .phone {
   position: relative; aspect-ratio: 9 / 16; border-radius: 36px; padding: 10px;
   background: linear-gradient(160deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .03));
