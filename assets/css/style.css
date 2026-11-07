@@ -166,8 +166,8 @@ body::before { /* static background glow */
 /* ---------- Hero ---------- */
 .hero {
   position: relative; max-width: var(--max); margin: 0 auto;
-  min-height: calc(100svh - 130px);
-  padding: 124px var(--pad) 48px;
+  min-height: 100svh;
+  padding: 140px var(--pad) 80px;
   display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: clamp(32px, 5vw, 80px);
 }
 .hero__text { position: relative; z-index: 1; }
